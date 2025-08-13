@@ -1,74 +1,50 @@
-/* public class Main {
-    public static void main(String[] args) {
-        System.out.println("Olá, mundo Java no Linux!");
-    }
-} */
-
-import java.util.Scanner;
-// O import é usado para o compilador localizar uma classe.
-
-public class Principal{
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int num;
-        System.out.print(“Digite um numero: ”);
-        num = input.nextInt();
-        System.out.println(“Numero digitado: ” + num); 
-        input.close();
-    }
-} 
-
-/* Escreva um programa em Java que leia dois números
-digitados pelo usuário. Em seguida, imprima os
-números em ordem crescente */
-
-public class Principal{
-    public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-        int num1, num2;
-
-        System.out.print(“Digite um numero: ”);
-        num1 = teclado.nextInt();
-        System.out.print(“Digite outro numero: ”);
-        num2 = teclado.nextInt();
-
-        if (num1 < num2) {
-            System.out.println(num1 + “ ” + num2);
-        } else{
-            System.out.println(num2 + “ ” + num1);
-        }
-        teclado.close();
-    }
-}
-
-/* Escreva um programa em Java que imprima a tabuada
-de multiplicação de um número inteiro no intervalo
-[1,10]. */
-
 public class Principal {
-    public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-        int num, cont, mult;
+    public static void main(String[ ] args) {
+        Funcionario objeto1 = new Funcionario( );
+        Funcionario objeto2 = new Funcionario( );
 
-        System.out.print(“Digite um numero: ”);
-        num = teclado.nextInt();
+        objeto1.cadastrar(“Robin”, 2021, 2500);
+        objeto1.exibirDados( );
 
-        cont = 1;
-        while (cont <= 10){
-            mult = num * cont;
-            System.out.println(num+ “*”+cont+“=”+mult);
-            cont++;
-        }
-        teclado.close();
-    } 
+        objeto2.cadastrar(“Hulk”, 2020, 1000);
+        objeto2.exibirDados( );
+    }
 }
 
-/*Construa um programa em Java que leia um número
-inteiro e diga se ele é par ou ímpar.
+/* Altere o código acima para criar um vetor com duas
+instâncias (objetos) da classe Funcionário e, em seguida,
+chame os métodos cadastrar e exibirDados */
+public class Principal{
+    public static void main(String[ ] args) {
+        Funcionario[ ] vetObjetos = new Funcionario[2];
 
-Faça um programa em Java que leia números inteiros
-enquanto não for digitado o número -1, e calcule e
-imprima a soma destes números
+        vetObjetos[0] = new Funcionario();
+        vetObjetos[1] = new Funcionario();
 
-Faça um programa em Java que calcule e imprima a
-soma dos 10 primeiros múltiplos de 3.*/
+        vetObjetos[0].cadastrar(“Robin”, 2021, 2500);
+        vetObjetos[0].exibirDados();
+
+        vetObjetos[1].cadastrar(“Hulk”, 2020, 1500);
+        vetObjetos[1].exibirDados();
+    }
+}
+
+/* Crie um programa em Java que some os elementos
+de um array formado por cinco elementos do tipo
+inteiro. */
+public class PrincipalSomaVetor {
+    public static void main(String[ ] args) {
+        int[ ] valores = {37, 42, 75, 13, 94};
+        int i, soma = 0;
+
+        for (i = 0; i < valores.length; i++) {
+            soma = soma + valores[i];
+        }
+
+        System.out.println(“Soma: ” + soma);
+    }
+}
+
+/* Altere o código acima para que o usuário do programa
+forneça os 5 números inteiros. 
+Dica: utilize a classe Scanner */
