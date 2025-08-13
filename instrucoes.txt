@@ -1,0 +1,12 @@
+Passos para codar em java
+
+java -version
+javac -version
+
+mkdir -p ~/MeuProjeto/src
+mkdir ~/MeuProjeto/bin
+cd ~/MeuProjeto
+
+javac -d bin src/*.java
+
+java -cp bin Main
